@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Dashboard.master.cs" Inherits="userMangment_Dashboard" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Dashboard</title>
+    <link href="/css/adminDashboard.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header id="header">
+            <div class="container">
+                <h1>Help Desk System</h1>
+                <nav id="nav">
+                    <ul>
+                         <% if (Session["Role"] != null && Session["Role"].ToString() == "Admin") { %>
+            <li><a href="/userMangment/AdminDashboard.aspx">Admin Home</a></li>
+        <% } %>
+
+        <% if (Session["Role"] != null && Session["Role"].ToString() == "Support") { %>
+            <li><a href="/userMangment/SupportDashboard.aspx">Support Home</a></li>
+        <% } %>
+
+        <% if (Session["Role"] != null && Session["Role"].ToString() == "User") { %>
+            <li><a href="/userMangment/UserDashboard.aspx">User Home</a></li>
+        <% } %>
+                        <li><a href="/userMangment/Profile.aspx">Profile</a></li>
+                        <li><a href="/userMangment/Logout.aspx">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+        <footer id="footer">
+            <div class="container">
+                <p>&copy; 2024 Help Desk System. All rights reserved.</p>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

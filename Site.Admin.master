@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Admin.master.cs" Inherits="Site_Admin" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Enterprise Help Desk</title>
+    <link href="css/my.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-headset"></i>
+                <h1>Enterprise Help Desk</h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="Default.aspx">Home</a></li>
+                    <li><a href="/userMangment/SubmitTicket.aspx">Tickets</a></li>
+                    <li><a href="knowledgebase.aspx">Knowledge Base</a></li>
+                    <li><a href="contact.aspx">Contact</a></li>
+                      <li><a href="/userMangment/Register.aspx" class="login-btn">Get Registered<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="/userMangment/login.aspx" class="login-btn">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <aside id="side">
+            <h2>Quick Actions</h2>
+            <ul>
+                <li><a  href="/userMangment/SubmitTicket.aspx"><i class="fas fa-ticket-alt"></i> Submit a Ticket</a></li>
+                <li><a href="#"><i class="fas fa-list"></i> View Tickets</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+            </ul>
+        </aside>
+        <section id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+            </div>
+            <p>&copy; 2025 Enterprise Help Desk. All rights reserved.</p>
+        </div>
+    </footer>
+   
+    </form>
+</body>
+</html>
