@@ -4,6 +4,8 @@
     <link href="/css/default.css" rel="stylesheet" />
 </asp:Content>
 
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="intro-section">
         <h1>Welcome to the Enterprise Help Desk System</h1>
